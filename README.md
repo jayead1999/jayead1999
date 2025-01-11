@@ -1,3 +1,4 @@
+![Jayead's GitHub Banner](./banner.svg)
 ## Hi there I'm Md.Towfique Hasan Jayead👋
 
 <!--
