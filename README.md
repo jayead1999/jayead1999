@@ -1,5 +1,3 @@
-![Header](./github-header-image.png)
-
 ## Hi there I'm Md.Towfique Hasan Jayead👋
 
 <!--
