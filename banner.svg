@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
+    <!-- Background with pattern -->
+    <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2d3748" stroke-width="1"/>
+        </pattern>
+        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Main background -->
+    <rect width="1200" height="300" fill="url(#grad2)"/>
+    <!-- Pattern overlay -->
+    <rect width="1200" height="300" fill="url(#grid)" opacity="0.3"/>
+    
+    <!-- Decorative shapes -->
+    <circle cx="100" cy="150" r="60" fill="#3b82f6" opacity="0.1"/>
+    <circle cx="1100" cy="150" r="80" fill="#3b82f6" opacity="0.1"/>
+    
+    <!-- Left bracket -->
+    <text x="100" y="150" font-family="monospace" font-size="120" fill="#3b82f6" opacity="0.3">{</text>
+    <!-- Right bracket -->
+    <text x="1100" y="150" font-family="monospace" font-size="120" fill="#3b82f6" opacity="0.3">}</text>
+    
+    <!-- Main heading with modern tech feel -->
+    <text x="600" y="140" font-family="Arial" font-size="44" fill="white" text-anchor="middle" font-weight="bold">
+        Md.Towfique Hasan Jayead
+    </text>
+    
+    <!-- Subtitle with code-like elements -->
+    <text x="600" y="190" font-family="monospace" font-size="24" fill="#60a5fa" text-anchor="middle">
+        &lt;Fullstack Developer /&gt;
+    </text>
+    
+    <!-- Tech-inspired decorative elements -->
+    <rect x="250" y="220" width="700" height="4" fill="#3b82f6" opacity="0.3"/>
+    <circle cx="250" cy="222" r="4" fill="#60a5fa"/>
+    <circle cx="950" cy="222" r="4" fill="#60a5fa"/>
+</svg>
