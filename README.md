@@ -145,27 +145,57 @@ $ whoami
 
 <table>
   <tr>
-    <td><strong>Laravel / PHP</strong></td>
+    <td align="center" width="80">
+      <img src="./SVG/laravel.svg" width="38" height="38" alt="Laravel" />
+    </td>
+    <td>
+      <strong>Laravel / PHP</strong><br />
+      <sub>APIs, auth, service structure, backend workflows</sub>
+    </td>
     <td><code>##################--</code></td>
     <td align="right"><strong>92%</strong></td>
   </tr>
   <tr>
-    <td><strong>MySQL / PostgreSQL</strong></td>
+    <td align="center" width="80">
+      <img src="./SVG/postgresql.svg" width="38" height="38" alt="PostgreSQL" />
+    </td>
+    <td>
+      <strong>MySQL / PostgreSQL</strong><br />
+      <sub>schema design, query tuning, relational data</sub>
+    </td>
     <td><code>#################---</code></td>
     <td align="right"><strong>85%</strong></td>
   </tr>
   <tr>
-    <td><strong>Docker / Linux / Server</strong></td>
+    <td align="center" width="80">
+      <img src="./SVG/docker.svg" width="38" height="38" alt="Docker" />
+    </td>
+    <td>
+      <strong>Docker / Linux / Server</strong><br />
+      <sub>containers, deployment, server administration</sub>
+    </td>
     <td><code>###############-----</code></td>
     <td align="right"><strong>78%</strong></td>
   </tr>
   <tr>
-    <td><strong>JavaScript / HTML / CSS</strong></td>
+    <td align="center" width="80">
+      <img src="./SVG/nodedotjs.svg" width="38" height="38" alt="JavaScript" />
+    </td>
+    <td>
+      <strong>JavaScript / HTML / CSS</strong><br />
+      <sub>frontend behavior, layouts, interactive UI basics</sub>
+    </td>
     <td><code>##############------</code></td>
     <td align="right"><strong>70%</strong></td>
   </tr>
   <tr>
-    <td><strong>React.js</strong></td>
+    <td align="center" width="80">
+      <img src="./SVG/react.svg" width="38" height="38" alt="React" />
+    </td>
+    <td>
+      <strong>React.js</strong><br />
+      <sub>components, hooks, full-stack growth path</sub>
+    </td>
     <td><code>########------------</code></td>
     <td align="right"><strong>40%</strong></td>
   </tr>
@@ -238,16 +268,40 @@ $ whoami
 
 ---
 
-<details open>
-<summary><b>Journey</b></summary>
+## Journey
 
-| Year | Focus |
-|---|---|
-| 2025 - now | Expanding into React and modern frontend, Docker orchestration, and server infrastructure |
-| 2023 - 2024 | Laravel APIs, backend architecture, authentication systems, database optimization, PostgreSQL |
-| 2021 - 2022 | HTML, CSS, JavaScript, Java fundamentals, and PHP basics |
-
-</details>
+<table>
+  <tr>
+    <td align="center" width="110">
+      <strong>2025 - now</strong><br />
+      <img src="./SVG/react.svg" width="34" height="34" alt="React" />
+    </td>
+    <td>
+      <strong>Expanding into full-stack engineering</strong><br />
+      <sub>React, modern frontend patterns, Docker orchestration, server infrastructure, and production-minded workflows.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="110">
+      <strong>2023 - 2024</strong><br />
+      <img src="./SVG/laravel.svg" width="34" height="34" alt="Laravel" />
+    </td>
+    <td>
+      <strong>Laravel API &amp; backend architecture</strong><br />
+      <sub>REST APIs, authentication systems, database optimization, PostgreSQL, and maintainable backend structure.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="110">
+      <strong>2021 - 2022</strong><br />
+      <img src="./SVG/github.svg" width="34" height="34" alt="GitHub" />
+    </td>
+    <td>
+      <strong>Foundation years</strong><br />
+      <sub>HTML, CSS, JavaScript, Java fundamentals, PHP basics, Git habits, and first web projects.</sub>
+    </td>
+  </tr>
+</table>
 
 <details>
 <summary><b>Language Breakdown</b></summary>
@@ -276,15 +330,39 @@ $ whoami
 
 ---
 
-## Connect
+## Contact
 
 <div align="center">
 
-<a href="https://github.com/jayead1999">
-  <img src="./SVG/github-wordmark.svg" width="120" alt="GitHub" />
-</a>
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <a href="https://jayead.dev">
+        <img src="./SVG/googlecloud.svg" width="42" height="42" alt="Portfolio" />
+      </a>
+      <br />
+      <strong>Portfolio</strong><br />
+      <a href="https://jayead.dev">jayead.dev</a>
+    </td>
+    <td align="center" width="33%">
+      <a href="mailto:jayead007@gmail.com">
+        <img src="./SVG/google.svg" width="42" height="42" alt="Gmail" />
+      </a>
+      <br />
+      <strong>Email</strong><br />
+      <a href="mailto:jayead007@gmail.com">jayead007@gmail.com</a>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://github.com/jayead1999">
+        <img src="./SVG/github.svg" width="42" height="42" alt="GitHub" />
+      </a>
+      <br />
+      <strong>GitHub</strong><br />
+      <a href="https://github.com/jayead1999">github.com/jayead1999</a>
+    </td>
+  </tr>
+</table>
 
-<br />
 <br />
 
 ![Always Learning](https://img.shields.io/badge/always-learning-388bfd?style=flat-square)
