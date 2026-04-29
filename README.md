@@ -1,908 +1,142 @@
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;700;800&display=swap');
-
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
-  font-family:'Space Grotesk',sans-serif;
-  background:#060c1a;
-  color:#e2e8f0;
-  overflow-x:hidden;
-}
-
-canvas#stars{
-  position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;
-}
-
-.wrap{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:1.5rem 1rem 2rem;}
-
-.hero{
-  background:linear-gradient(135deg,#0d1b3e 0%,#0a1628 50%,#0d2240 100%);
-  border:1px solid rgba(56,139,253,0.25);
-  border-radius:20px;
-  padding:2.5rem 2rem;
-  position:relative;
-  overflow:hidden;
-  margin-bottom:1rem;
-}
-
-.hero::before{
-  content:'';
-  position:absolute;
-  top:-60px;right:-60px;
-  width:220px;height:220px;
-  background:radial-gradient(circle,rgba(56,139,253,0.12) 0%,transparent 70%);
-  border-radius:50%;
-  animation:pulse 4s ease-in-out infinite;
-}
-
-.hero::after{
-  content:'';
-  position:absolute;
-  bottom:-40px;left:-40px;
-  width:180px;height:180px;
-  background:radial-gradient(circle,rgba(29,158,117,0.1) 0%,transparent 70%);
-  border-radius:50%;
-  animation:pulse 4s ease-in-out infinite 2s;
-}
-
-@keyframes pulse{
-  0%,100%{transform:scale(1);opacity:0.7}
-  50%{transform:scale(1.1);opacity:1}
-}
-
-.hero-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;position:relative;z-index:2;}
-
-.hero-left{flex:1}
-
-.typing-line{
-  font-family:'Space Grotesk',monospace;
-  font-size:12px;
-  color:#388bfd;
-  letter-spacing:0.1em;
-  margin-bottom:0.75rem;
-  opacity:0;
-  animation:fadeup 0.6s ease forwards 0.2s;
-}
-
-.hero-name{
-  font-family:'Syne',sans-serif;
-  font-size:2.1rem;
-  font-weight:800;
-  line-height:1.05;
-  color:#ffffff;
-  opacity:0;
-  animation:fadeup 0.6s ease forwards 0.4s;
-}
-
-.hero-name span{
-  background:linear-gradient(90deg,#388bfd,#1d9e75);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-
-.hero-tagline{
-  font-size:14px;
-  color:#8b9dc3;
-  margin-top:0.6rem;
-  opacity:0;
-  animation:fadeup 0.6s ease forwards 0.6s;
-}
-
-.status-pill{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  background:rgba(29,158,117,0.12);
-  border:1px solid rgba(29,158,117,0.3);
-  border-radius:50px;
-  padding:5px 12px;
-  font-size:12px;
-  color:#1d9e75;
-  margin-top:1rem;
-  opacity:0;
-  animation:fadeup 0.6s ease forwards 0.8s;
-}
-
-.status-dot{
-  width:6px;height:6px;
-  border-radius:50%;
-  background:#1d9e75;
-  animation:blink 1.4s ease-in-out infinite;
-}
-
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
-
-.avatar-wrap{
-  width:90px;height:90px;flex-shrink:0;
-  position:relative;
-  opacity:0;
-  animation:fadeup 0.6s ease forwards 0.3s;
-}
-
-.avatar{
-  width:90px;height:90px;
-  border-radius:18px;
-  background:linear-gradient(135deg,#1a3a6e,#0d2240);
-  border:2px solid rgba(56,139,253,0.4);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Syne',sans-serif;
-  font-size:2rem;font-weight:800;
-  color:#388bfd;
-}
-
-.avatar-ring{
-  position:absolute;
-  inset:-6px;
-  border-radius:24px;
-  border:1.5px solid transparent;
-  border-top-color:#388bfd;
-  border-right-color:#1d9e75;
-  animation:spin 6s linear infinite;
-}
-
-@keyframes spin{to{transform:rotate(360deg)}}
-
-.quick-stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
-  margin-top:1.5rem;
-  position:relative;z-index:2;
-}
-
-.qs{
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:12px;
-  padding:0.75rem;
-  text-align:center;
-  opacity:0;
-  animation:fadeup 0.5s ease forwards;
-}
-
-.qs:nth-child(1){animation-delay:1s}
-.qs:nth-child(2){animation-delay:1.15s}
-.qs:nth-child(3){animation-delay:1.3s}
-
-.qs-num{
-  font-family:'Syne',sans-serif;
-  font-size:1.5rem;
-  font-weight:700;
-  color:#ffffff;
-  display:block;
-}
-
-.qs-label{font-size:11px;color:#5a7096;margin-top:2px}
-
-@keyframes fadeup{
-  from{opacity:0;transform:translateY(16px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-.section{margin-bottom:0.75rem;opacity:0;animation:fadeup 0.6s ease forwards}
-
-.s1{animation-delay:1.5s}
-.s2{animation-delay:1.7s}
-.s3{animation-delay:1.9s}
-.s4{animation-delay:2.1s}
-.s5{animation-delay:2.3s}
-
-.sec-label{
-  font-size:11px;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:#388bfd;
-  margin-bottom:0.6rem;
-  padding-left:2px;
-  display:flex;align-items:center;gap:8px;
-}
-
-.sec-label::after{
-  content:'';
-  flex:1;height:1px;
-  background:linear-gradient(90deg,rgba(56,139,253,0.3),transparent);
-}
-
-.card{
-  background:linear-gradient(135deg,rgba(13,27,62,0.8),rgba(10,22,40,0.9));
-  border:1px solid rgba(56,139,253,0.15);
-  border-radius:16px;
-  padding:1.25rem 1.5rem;
-  transition:border-color 0.3s;
-}
-
-.card:hover{border-color:rgba(56,139,253,0.35)}
-
-.skill-bar-wrap{margin-bottom:0.8rem}
-.skill-bar-wrap:last-child{margin-bottom:0}
-
-.skill-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
-.skill-name{font-size:13px;font-weight:500;color:#c9d8f0}
-.skill-pct{font-size:12px;color:#388bfd;font-weight:600}
-
-.bar-bg{
-  height:5px;
-  background:rgba(255,255,255,0.07);
-  border-radius:10px;
-  overflow:hidden;
-}
-
-.bar-fill{
-  height:100%;
-  border-radius:10px;
-  width:0%;
-  transition:width 1.5s cubic-bezier(0.16,1,0.3,1);
-}
-
-.bar-laravel{background:linear-gradient(90deg,#ef4444,#f97316)}
-.bar-php{background:linear-gradient(90deg,#8b5cf6,#6366f1)}
-.bar-mysql{background:linear-gradient(90deg,#0ea5e9,#2563eb)}
-.bar-docker{background:linear-gradient(90deg,#0ea5e9,#06b6d4)}
-.bar-linux{background:linear-gradient(90deg,#f59e0b,#f97316)}
-.bar-react{background:linear-gradient(90deg,#22d3ee,#3b82f6)}
-
-.tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-
-.tech-chip{
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.09);
-  border-radius:10px;
-  padding:0.65rem 0.5rem;
-  text-align:center;
-  font-size:12px;
-  color:#8b9dc3;
-  font-weight:500;
-  cursor:default;
-  transition:all 0.25s;
-  position:relative;
-  overflow:hidden;
-}
-
-.tech-chip:hover{
-  background:rgba(56,139,253,0.1);
-  border-color:rgba(56,139,253,0.35);
-  color:#c9d8f0;
-  transform:translateY(-2px);
-}
-
-.tech-chip .tc-icon{
-  display:block;
-  font-size:18px;
-  margin-bottom:4px;
-}
-
-.tag-primary{
-  font-size:9px;
-  padding:1px 5px;
-  background:rgba(56,139,253,0.2);
-  color:#388bfd;
-  border-radius:3px;
-  display:inline-block;
-  margin-top:2px;
-  font-weight:600;
-  letter-spacing:0.05em;
-}
-
-.tag-learn{
-  font-size:9px;
-  padding:1px 5px;
-  background:rgba(245,158,11,0.2);
-  color:#f59e0b;
-  border-radius:3px;
-  display:inline-block;
-  margin-top:2px;
-  font-weight:600;
-  letter-spacing:0.05em;
-}
-
-.timeline{display:flex;flex-direction:column;gap:0}
-
-.tl-item{
-  display:flex;
-  gap:1rem;
-  padding-bottom:1.25rem;
-  position:relative;
-}
-
-.tl-item:last-child{padding-bottom:0}
-
-.tl-left{
-  display:flex;flex-direction:column;align-items:center;
-  width:28px;flex-shrink:0;
-}
-
-.tl-dot{
-  width:10px;height:10px;
-  border-radius:50%;
-  border:2px solid #388bfd;
-  background:#060c1a;
-  flex-shrink:0;
-  margin-top:3px;
-}
-
-.tl-line{
-  flex:1;width:1px;
-  background:rgba(56,139,253,0.2);
-  margin-top:4px;
-}
-
-.tl-item:last-child .tl-line{display:none}
-
-.tl-right{flex:1}
-.tl-title{font-size:14px;font-weight:600;color:#c9d8f0;margin-bottom:2px}
-.tl-desc{font-size:12px;color:#5a7096;line-height:1.5}
-
-.tl-year{
-  font-size:10px;
-  padding:2px 7px;
-  background:rgba(56,139,253,0.12);
-  color:#388bfd;
-  border-radius:4px;
-  display:inline-block;
-  margin-bottom:4px;
-  font-weight:600;
-}
-
-.chart-area{height:120px;display:flex;align-items:flex-end;gap:6px;padding:0.5rem 0}
-
-.chart-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
-
-.chart-bar{
-  width:100%;
-  border-radius:6px 6px 0 0;
-  transition:height 1.2s cubic-bezier(0.16,1,0.3,1);
-  height:0;
-  position:relative;
-}
-
-.chart-bar:hover::after{
-  content:attr(data-val);
-  position:absolute;
-  top:-20px;left:50%;
-  transform:translateX(-50%);
-  font-size:10px;
-  color:#388bfd;
-  font-weight:600;
-  white-space:nowrap;
-}
-
-.chart-label{font-size:10px;color:#5a7096;text-align:center}
-
-.contrib-grid{
-  display:grid;
-  grid-template-columns:repeat(26,1fr);
-  gap:3px;
-}
-
-.cg-cell{
-  aspect-ratio:1;
-  border-radius:2px;
-  background:rgba(255,255,255,0.04);
-  transition:all 0.2s;
-}
-
-.cg-cell:hover{transform:scale(1.3)}
-.cg-0{background:rgba(255,255,255,0.04)}
-.cg-1{background:rgba(56,139,253,0.2)}
-.cg-2{background:rgba(56,139,253,0.4)}
-.cg-3{background:rgba(56,139,253,0.65)}
-.cg-4{background:#388bfd}
-
-.lang-list{display:flex;flex-direction:column;gap:10px}
-
-.lang-item{}
-
-.lang-row{display:flex;justify-content:space-between;margin-bottom:4px}
-.lang-name{font-size:13px;font-weight:500;color:#c9d8f0}
-.lang-pct{font-size:12px;color:#5a7096}
-
-.lang-bar{height:4px;background:rgba(255,255,255,0.06);border-radius:10px;overflow:hidden}
-.lang-fill{height:100%;border-radius:10px;width:0;transition:width 1.4s cubic-bezier(0.16,1,0.3,1)}
-
-.goals-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-
-.goal-card{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.07);
-  border-radius:12px;
-  padding:1rem;
-  transition:all 0.3s;
-}
-
-.goal-card:hover{
-  background:rgba(56,139,253,0.06);
-  border-color:rgba(56,139,253,0.25);
-  transform:translateY(-2px);
-}
-
-.goal-icon{
-  width:32px;height:32px;
-  border-radius:8px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:16px;
-  margin-bottom:8px;
-}
-
-.goal-title{font-size:13px;font-weight:600;color:#c9d8f0;margin-bottom:3px}
-.goal-desc{font-size:11px;color:#5a7096;line-height:1.4}
-
-.goal-status{
-  font-size:9px;
-  padding:2px 6px;
-  border-radius:3px;
-  display:inline-block;
-  margin-top:6px;
-  font-weight:700;
-  letter-spacing:0.06em;
-}
-
-.active-status{background:rgba(29,158,117,0.15);color:#1d9e75}
-.next-status{background:rgba(245,158,11,0.15);color:#f59e0b}
-
-.connect-row{display:flex;gap:8px;flex-wrap:wrap}
-
-.connect-btn{
-  display:inline-flex;align-items:center;gap:6px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:10px;
-  padding:8px 14px;
-  font-size:12px;font-weight:500;
-  color:#8b9dc3;
-  text-decoration:none;
-  transition:all 0.25s;
-  cursor:pointer;
-}
-
-.connect-btn:hover{
-  background:rgba(56,139,253,0.1);
-  border-color:rgba(56,139,253,0.35);
-  color:#c9d8f0;
-}
-
-.footer-bar{
-  display:flex;justify-content:space-between;align-items:center;
-  margin-top:1.5rem;
-  padding-top:1rem;
-  border-top:1px solid rgba(255,255,255,0.06);
-  font-size:11px;color:#3a5080;
-}
-
-.copy-btn{
-  background:linear-gradient(90deg,#1a3a6e,#0d2240);
-  border:1px solid rgba(56,139,253,0.3);
-  border-radius:8px;
-  padding:6px 14px;
-  font-size:12px;font-family:inherit;
-  color:#388bfd;cursor:pointer;
-  transition:all 0.25s;
-  font-weight:500;
-}
-
-.copy-btn:hover{background:rgba(56,139,253,0.15);border-color:rgba(56,139,253,0.5)}
-</style>
-
-<h2 class="sr-only">Jayead's GitHub profile — animated developer portfolio card with skills, analytics, and tech stack</h2>
-
-<div style="background:#060c1a;padding:1rem 0;position:relative;overflow:hidden">
-<canvas id="stars"></canvas>
-
-<div class="wrap">
-
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="typing-line" id="typed">&gt; ./hello_world.sh</div>
-      <div class="hero-name">Towfique Hasan<br><span>Jayead</span></div>
-      <div class="hero-tagline">Laravel Developer · Backend Engineer · BD</div>
-      <div class="status-pill">
-        <span class="status-dot"></span>
-        Open to opportunities
-      </div>
-    </div>
-    <div class="avatar-wrap">
-      <div class="avatar">TJ</div>
-      <div class="avatar-ring"></div>
-    </div>
-  </div>
-
-  <div class="quick-stats">
-    <div class="qs">
-      <span class="qs-num" data-target="3">0</span>
-      <div class="qs-label">yrs experience</div>
-    </div>
-    <div class="qs">
-      <span class="qs-num" data-target="12">0</span>
-      <div class="qs-label">tech stack</div>
-    </div>
-    <div class="qs">
-      <span class="qs-num" data-target="100">0</span>
-      <div class="qs-label">commits/mo</div>
-    </div>
-  </div>
-</div>
-
-<div class="section s1">
-  <div class="sec-label">skill proficiency</div>
-  <div class="card">
-    <div class="skill-bar-wrap">
-      <div class="skill-row"><span class="skill-name">Laravel / PHP</span><span class="skill-pct">92%</span></div>
-      <div class="bar-bg"><div class="bar-fill bar-laravel" data-w="92"></div></div>
-    </div>
-    <div class="skill-bar-wrap">
-      <div class="skill-row"><span class="skill-name">MySQL / PostgreSQL</span><span class="skill-pct">85%</span></div>
-      <div class="bar-bg"><div class="bar-fill bar-mysql" data-w="85"></div></div>
-    </div>
-    <div class="skill-bar-wrap">
-      <div class="skill-row"><span class="skill-name">Docker / Linux / Server</span><span class="skill-pct">78%</span></div>
-      <div class="bar-bg"><div class="bar-fill bar-docker" data-w="78"></div></div>
-    </div>
-    <div class="skill-bar-wrap">
-      <div class="skill-row"><span class="skill-name">JavaScript / HTML / CSS</span><span class="skill-pct">70%</span></div>
-      <div class="bar-bg"><div class="bar-fill bar-linux" data-w="70"></div></div>
-    </div>
-    <div class="skill-bar-wrap">
-      <div class="skill-row"><span class="skill-name">React.js <span style="color:#f59e0b;font-size:10px">(learning)</span></span><span class="skill-pct">40%</span></div>
-      <div class="bar-bg"><div class="bar-fill bar-react" data-w="40"></div></div>
-    </div>
-  </div>
-</div>
-
-<div class="section s2">
-  <div class="sec-label">tech stack</div>
-  <div class="card">
-    <div class="tech-grid">
-      <div class="tech-chip"><span class="tc-icon">🔴</span>Laravel<div class="tag-primary">PRIMARY</div></div>
-      <div class="tech-chip"><span class="tc-icon">🐘</span>PHP<div class="tag-primary">PRIMARY</div></div>
-      <div class="tech-chip"><span class="tc-icon">🐋</span>Docker<br><span style="font-size:10px;color:#5a7096">devops</span></div>
-      <div class="tech-chip"><span class="tc-icon">🐧</span>Linux<br><span style="font-size:10px;color:#5a7096">server</span></div>
-      <div class="tech-chip"><span class="tc-icon">🗄️</span>MySQL<br><span style="font-size:10px;color:#5a7096">database</span></div>
-      <div class="tech-chip"><span class="tc-icon">🐘</span>PostgreSQL<br><span style="font-size:10px;color:#5a7096">database</span></div>
-      <div class="tech-chip"><span class="tc-icon">⚛️</span>React.js<div class="tag-learn">LEARNING</div></div>
-      <div class="tech-chip"><span class="tc-icon">🌿</span>Git/GitHub<br><span style="font-size:10px;color:#5a7096">vcs</span></div>
-      <div class="tech-chip"><span class="tc-icon">🔥</span>Firebase<br><span style="font-size:10px;color:#5a7096">cloud</span></div>
-      <div class="tech-chip"><span class="tc-icon">☕</span>Java<br><span style="font-size:10px;color:#5a7096">language</span></div>
-      <div class="tech-chip"><span class="tc-icon">📜</span>JavaScript<br><span style="font-size:10px;color:#5a7096">frontend</span></div>
-      <div class="tech-chip"><span class="tc-icon">🍃</span>MongoDB<br><span style="font-size:10px;color:#5a7096">nosql</span></div>
-    </div>
-  </div>
-</div>
-
-<div class="section s3">
-  <div class="sec-label">contribution activity · 2025</div>
-  <div class="card">
-    <div class="contrib-grid" id="cgrid"></div>
-    <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:10px;color:#3a5080">
-      <span>Jan 2025</span>
-      <span style="display:flex;align-items:center;gap:4px">less <span style="display:flex;gap:2px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(255,255,255,0.04);display:inline-block"></span><span style="width:10px;height:10px;border-radius:2px;background:rgba(56,139,253,0.2);display:inline-block"></span><span style="width:10px;height:10px;border-radius:2px;background:rgba(56,139,253,0.65);display:inline-block"></span><span style="width:10px;height:10px;border-radius:2px;background:#388bfd;display:inline-block"></span></span> more</span>
-      <span>Jun 2025</span>
-    </div>
-  </div>
-</div>
-
-<div class="section s3">
-  <div class="sec-label">monthly commit chart</div>
-  <div class="card">
-    <div class="chart-area" id="chartarea"></div>
-    <div style="display:flex;gap:6px;margin-top:4px" id="chartlabels"></div>
-  </div>
-</div>
-
-<div class="section s4">
-  <div class="sec-label">language breakdown</div>
-  <div class="card">
-    <div class="lang-list">
-      <div class="lang-item">
-        <div class="lang-row"><span class="lang-name">PHP</span><span class="lang-pct">48%</span></div>
-        <div class="lang-bar"><div class="lang-fill" style="background:#8b5cf6" data-w="48"></div></div>
-      </div>
-      <div class="lang-item">
-        <div class="lang-row"><span class="lang-name">Blade (Laravel)</span><span class="lang-pct">22%</span></div>
-        <div class="lang-bar"><div class="lang-fill" style="background:#ef4444" data-w="22"></div></div>
-      </div>
-      <div class="lang-item">
-        <div class="lang-row"><span class="lang-name">JavaScript</span><span class="lang-pct">15%</span></div>
-        <div class="lang-bar"><div class="lang-fill" style="background:#f59e0b" data-w="15"></div></div>
-      </div>
-      <div class="lang-item">
-        <div class="lang-row"><span class="lang-name">SQL</span><span class="lang-pct">10%</span></div>
-        <div class="lang-bar"><div class="lang-fill" style="background:#0ea5e9" data-w="10"></div></div>
-      </div>
-      <div class="lang-item">
-        <div class="lang-row"><span class="lang-name">Other</span><span class="lang-pct">5%</span></div>
-        <div class="lang-bar"><div class="lang-fill" style="background:#5a7096" data-w="5"></div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section s4">
-  <div class="sec-label">journey</div>
-  <div class="card">
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-left"><div class="tl-dot" style="border-color:#1d9e75;background:#0d2240"></div><div class="tl-line"></div></div>
-        <div class="tl-right">
-          <div class="tl-year">2025 · now</div>
-          <div class="tl-title">Expanding into React & modern frontend</div>
-          <div class="tl-desc">Building full-stack capabilities, exploring Docker orchestration and server infrastructure at scale</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-right">
-          <div class="tl-year">2023 – 2024</div>
-          <div class="tl-title">Laravel API & backend architecture</div>
-          <div class="tl-desc">REST APIs, database optimization, Laravel ecosystem, authentication systems, PostgreSQL</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-right">
-          <div class="tl-year">2021 – 2022</div>
-          <div class="tl-title">First steps into web development</div>
-          <div class="tl-desc">HTML, CSS, JavaScript, Java fundamentals, PHP basics — the foundation years</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section s5">
-  <div class="sec-label">building toward</div>
-  <div class="goals-grid">
-    <div class="goal-card">
-      <div class="goal-icon" style="background:rgba(239,68,68,0.12)">🚀</div>
-      <div class="goal-title">Laravel at scale</div>
-      <div class="goal-desc">High-performance APIs, queues, caching with Redis</div>
-      <div class="goal-status active-status">ACTIVE</div>
-    </div>
-    <div class="goal-card">
-      <div class="goal-icon" style="background:rgba(14,165,233,0.12)">🐋</div>
-      <div class="goal-title">Docker mastery</div>
-      <div class="goal-desc">Container orchestration, CI/CD pipelines</div>
-      <div class="goal-status active-status">ACTIVE</div>
-    </div>
-    <div class="goal-card">
-      <div class="goal-icon" style="background:rgba(34,211,238,0.12)">⚛️</div>
-      <div class="goal-title">React.js</div>
-      <div class="goal-desc">Component architecture, hooks, state management</div>
-      <div class="goal-status next-status">NEXT UP</div>
-    </div>
-    <div class="goal-card">
-      <div class="goal-icon" style="background:rgba(245,158,11,0.12)">🖥️</div>
-      <div class="goal-title">Server admin</div>
-      <div class="goal-desc">Linux hardening, nginx, cloud deployment</div>
-      <div class="goal-status active-status">ACTIVE</div>
-    </div>
-  </div>
-</div>
-
-<div class="section s5">
-  <div class="sec-label">connect</div>
-  <div class="card">
-    <div class="connect-row">
-      <a class="connect-btn" href="https://github.com/jayead1999">
-        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        GitHub
-      </a>
-      <div class="connect-btn" onclick="sendPrompt('What should I add to my GitHub profile README to make it stand out more?')">
-        Ask Claude for tips ↗
-      </div>
-      <div class="connect-btn" onclick="sendPrompt('Generate a cool GitHub README badge section for a Laravel developer')">
-        Generate badges ↗
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="footer-bar">
-  <span>jayead1999 · md.towfique hasan jayead</span>
-  <button class="copy-btn" onclick="copyMd()">copy README.md</button>
-</div>
-
-</div>
-</div>
-
-<script>
-const canvas = document.getElementById('stars');
-const ctx = canvas.getContext('2d');
-let stars = [];
-
-function initCanvas(){
-  const wrap = canvas.parentElement;
-  canvas.width = wrap.offsetWidth;
-  canvas.height = wrap.offsetHeight;
-  stars = Array.from({length:80},()=>({
-    x:Math.random()*canvas.width,
-    y:Math.random()*canvas.height,
-    r:Math.random()*1.2+0.3,
-    a:Math.random(),
-    speed:Math.random()*0.3+0.1,
-    da:Math.random()*0.005+0.002
-  }));
-}
-
-function drawStars(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  stars.forEach(s=>{
-    s.a+=s.da;
-    if(s.a>1||s.a<0)s.da*=-1;
-    ctx.beginPath();
-    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-    ctx.fillStyle=`rgba(170,200,255,${s.a*0.6})`;
-    ctx.fill();
-  });
-  requestAnimationFrame(drawStars);
-}
-
-initCanvas();
-drawStars();
-
-const months = ['Jan','Feb','Mar','Apr','May','Jun'];
-const vals = [45,68,52,89,72,95];
-const colors = ['#388bfd','#1d9e75','#8b5cf6','#ef4444','#f59e0b','#388bfd'];
-
-const ca = document.getElementById('chartarea');
-const cl = document.getElementById('chartlabels');
-const maxV = Math.max(...vals);
-
-months.forEach((m,i)=>{
-  const bw = document.createElement('div');
-  bw.className='chart-bar-wrap';
-  const b = document.createElement('div');
-  b.className='chart-bar';
-  b.style.background=colors[i];
-  b.setAttribute('data-val',vals[i]+' commits');
-  bw.appendChild(b);
-  ca.appendChild(bw);
-
-  const lbl = document.createElement('div');
-  lbl.className='chart-label';
-  lbl.style.flex='1';
-  lbl.style.textAlign='center';
-  lbl.textContent=m;
-  cl.appendChild(lbl);
-
-  setTimeout(()=>{
-    b.style.height=Math.round((vals[i]/maxV)*100)+'px';
-  },2400+i*100);
-});
-
-const cgrid = document.getElementById('cgrid');
-const levels = [0,0,0,1,1,2,2,3,4,3,2,1,0,1,2,3,4,3,2,1,2,3,2,1,0,1];
-levels.forEach(l=>{
-  const c = document.createElement('div');
-  c.className=`cg-cell cg-${l}`;
-  cgrid.appendChild(c);
-});
-
-function animateBars(){
-  document.querySelectorAll('.bar-fill').forEach(b=>{
-    setTimeout(()=>{ b.style.width=b.dataset.w+'%'; },2000);
-  });
-  document.querySelectorAll('.lang-fill').forEach(b=>{
-    setTimeout(()=>{ b.style.width=b.dataset.w+'%'; },2200);
-  });
-}
-
-function countUp(){
-  document.querySelectorAll('[data-target]').forEach(el=>{
-    const target=parseInt(el.dataset.target);
-    let current=0;
-    const step=Math.ceil(target/30);
-    const suffix=target===100?'+':'';
-    const timer=setInterval(()=>{
-      current=Math.min(current+step,target);
-      el.textContent=current+suffix;
-      if(current>=target)clearInterval(timer);
-    },40);
-  });
-}
-
-setTimeout(countUp,1200);
-animateBars();
-
-const typed=document.getElementById('typed');
-const text=typed.textContent;
-typed.textContent='';
-let ti=0;
-function typeChar(){
-  if(ti<text.length){
-    typed.textContent+=text[ti++];
-    setTimeout(typeChar,60);
-  }
-}
-setTimeout(typeChar,400);
-
-function copyMd(){
-  const md=`<!-- Animated GitHub Profile README — jayead1999 -->
-<!-- Built with love | Md. Towfique Hasan Jayead -->
+<!-- GitHub Profile README - jayead1999 -->
+<!-- Md. Towfique Hasan Jayead -->
 
 <div align="center">
 
-# Hi, I'm Towfique Hasan Jayead 👋
+# Hi, I'm Towfique Hasan Jayead
+
+### Laravel Developer | Backend Engineer | Bangladesh
 
 ![Profile Views](https://komarev.com/ghpvc/?username=jayead1999&color=388bfd&style=flat-square)
 [![GitHub followers](https://img.shields.io/github/followers/jayead1999?style=flat-square&color=388bfd)](https://github.com/jayead1999)
+[![GitHub](https://img.shields.io/badge/GitHub-jayead1999-181717?style=flat-square&logo=github)](https://github.com/jayead1999)
 
 </div>
 
 ---
 
-\`\`\`bash
+```bash
 $ whoami
 > Laravel Developer | Backend Engineer | Bangladesh
-> Focus: PHP · Laravel · MySQL · PostgreSQL · Docker · Linux
-> Learning: React.js | Next: full-stack mastery
-\`\`\`
+> Focus: PHP | Laravel | MySQL | PostgreSQL | Docker | Linux
+> Learning: React.js
+> Building: scalable APIs, server infrastructure, and full-stack products
+```
 
 ---
 
-### Tech Stack
+## Quick Snapshot
 
-**Backend (Primary)**
+| Experience | Tech Stack | Focus |
+|---|---|---|
+| 3+ years | 12+ tools | Backend, APIs, DevOps |
+
+---
+
+## Skill Proficiency
+
+| Skill | Level |
+|---|---:|
+| Laravel / PHP | 92% |
+| MySQL / PostgreSQL | 85% |
+| Docker / Linux / Server | 78% |
+| JavaScript / HTML / CSS | 70% |
+| React.js | 40% |
+
+---
+
+## Tech Stack
+
+**Backend**
+
 ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 
 **Databases**
+
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 
 **DevOps & Systems**
+
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
-**Frontend (Growing)**
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+**Frontend**
+
+![React](https://img.shields.io/badge/React.js-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
----
+**Other**
 
-### GitHub Analytics
-
-<p align="center">
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=jayead1999&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jayead1999&layout=compact&theme=tokyonight&hide_border=true" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=jayead1999&theme=tokyonight&hide_border=true" />
-</p>
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=jayead1999&theme=tokyonight&no-frame=true&row=1" />
-</p>
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 
 ---
 
-### Currently building toward
+## GitHub Analytics
+
+<p align="center">
+  <img height="180" src="https://github-readme-stats.vercel.app/api?username=jayead1999&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="Jayead's GitHub stats" />
+  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jayead1999&layout=compact&theme=tokyonight&hide_border=true" alt="Jayead's top languages" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=jayead1999&theme=tokyonight&hide_border=true" alt="GitHub streak stats" />
+</p>
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=jayead1999&theme=tokyonight&no-frame=true&row=1" alt="GitHub trophies" />
+</p>
+
+---
+
+## Language Breakdown
+
+| Language | Usage |
+|---|---:|
+| PHP | 48% |
+| Blade (Laravel) | 22% |
+| JavaScript | 15% |
+| SQL | 10% |
+| Other | 5% |
+
+---
+
+## Journey
+
+| Year | Focus |
+|---|---|
+| 2025 - now | Expanding into React and modern frontend, Docker orchestration, and server infrastructure |
+| 2023 - 2024 | Laravel APIs, backend architecture, authentication systems, database optimization, PostgreSQL |
+| 2021 - 2022 | HTML, CSS, JavaScript, Java fundamentals, and PHP basics |
+
+---
+
+## Currently Building Toward
 
 | Goal | Status |
-|------|--------|
+|---|---|
 | Laravel REST APIs at scale | Active |
-| Docker containerization & CI/CD | Active |
-| Linux server admin & hardening | Active |
+| Docker containerization and CI/CD | Active |
+| Linux server admin and hardening | Active |
 | React.js frontend development | Next up |
 
 ---
 
-<p align="center">
-  <sub>always learning · always shipping · jayead1999</sub>
-</p>`;
+## Connect
 
-  navigator.clipboard.writeText(md).then(()=>{
-    const btn=document.querySelector('.copy-btn');
-    btn.textContent='copied!';
-    setTimeout(()=>btn.textContent='copy README.md',2000);
-  });
-}
-</script>
+<p align="center">
+  <a href="https://github.com/jayead1999">
+    <img src="https://img.shields.io/badge/GitHub-jayead1999-181717?style=for-the-badge&logo=github" alt="GitHub profile" />
+  </a>
+</p>
+
+<p align="center">
+  <sub>Always learning | Always shipping | jayead1999</sub>
+</p>
