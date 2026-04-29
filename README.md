@@ -196,23 +196,42 @@ $ whoami
 
 <table>
   <tr>
-    <td width="50%">
-      <strong>Backend engineering</strong><br />
-      <sub>REST APIs, authentication, database optimization, queues, caching, service structure.</sub>
+    <td align="center" width="25%">
+      <img src="./SVG/laravel.svg" width="38" height="38" alt="Laravel" /><br />
+      <strong>API Craft</strong><br />
+      <sub>Laravel services, REST APIs, auth flows</sub>
     </td>
-    <td width="50%">
-      <strong>Server &amp; deployment</strong><br />
-      <sub>Linux, Docker, CI/CD, cloud hosting, production readiness, monitoring habits.</sub>
+    <td align="center" width="25%">
+      <img src="./SVG/postgresql.svg" width="38" height="38" alt="PostgreSQL" /><br />
+      <strong>Data Layer</strong><br />
+      <sub>queries, schema design, optimization</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="./SVG/docker.svg" width="38" height="38" alt="Docker" /><br />
+      <strong>Shipping Flow</strong><br />
+      <sub>Docker, CI/CD, deploy discipline</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="./SVG/react.svg" width="38" height="38" alt="React" /><br />
+      <strong>Full Stack</strong><br />
+      <sub>React, components, product polish</sub>
     </td>
   </tr>
+</table>
+
+<table>
   <tr>
-    <td width="50%">
-      <strong>Full-stack growth</strong><br />
-      <sub>React, Next.js, UI architecture, reusable components, modern frontend workflows.</sub>
+    <td width="33%">
+      <strong>Now</strong><br />
+      <sub>Building stronger Laravel APIs, cleaner service structure, and reliable database patterns.</sub>
     </td>
-    <td width="50%">
-      <strong>Product mindset</strong><br />
-      <sub>Clean user flows, maintainable code, practical tools, fast iteration.</sub>
+    <td width="33%">
+      <strong>Next</strong><br />
+      <sub>Deepening Docker, Linux server administration, GitHub Actions, and cloud deployment.</sub>
+    </td>
+    <td width="33%">
+      <strong>Target</strong><br />
+      <sub>Becoming a sharper full-stack engineer who can design, build, deploy, and maintain production-ready products.</sub>
     </td>
   </tr>
 </table>
