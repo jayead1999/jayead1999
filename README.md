@@ -5,10 +5,12 @@
 <img src="./banner.svg" alt="Animated banner for Towfique Hasan Jayead" width="100%" />
 
 <br />
+<br />
 
 ![Profile Views](https://komarev.com/ghpvc/?username=jayead1999&color=388bfd&style=flat-square)
 [![GitHub followers](https://img.shields.io/github/followers/jayead1999?style=flat-square&color=388bfd)](https://github.com/jayead1999)
 [![GitHub](https://img.shields.io/badge/GitHub-jayead1999-181717?style=flat-square&logo=github)](https://github.com/jayead1999)
+![Open To Work](https://img.shields.io/badge/open_to-opportunities-1d9e75?style=flat-square)
 
 </div>
 
@@ -22,56 +24,152 @@ $ whoami
 > Building: scalable APIs, server infrastructure, and full-stack products
 ```
 
-| 3+ Years Experience | 12+ Tools | 100+ Commits / Month |
-|---|---|---|
-| Backend systems | Laravel ecosystem | Always shipping |
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <strong>3+ Years</strong><br />
+      <sub>backend &amp; web experience</sub>
+    </td>
+    <td align="center" width="33%">
+      <strong>12+ Tools</strong><br />
+      <sub>Laravel, databases, DevOps</sub>
+    </td>
+    <td align="center" width="33%">
+      <strong>100+ / Month</strong><br />
+      <sub>shipping mindset</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
-## Tech Stack
+## Core Stack
 
-<div align="center">
+<table>
+  <tr>
+    <td align="center" width="120">
+      <img src="./SVG/laravel.svg" width="44" height="44" alt="Laravel" /><br />
+      <strong>Laravel</strong><br />
+      <sub>primary</sub>
+    </td>
+    <td align="center" width="120">
+      <img src="./SVG/mysql.svg" width="44" height="44" alt="MySQL" /><br />
+      <strong>MySQL</strong><br />
+      <sub>database</sub>
+    </td>
+    <td align="center" width="120">
+      <img src="./SVG/postgresql.svg" width="44" height="44" alt="PostgreSQL" /><br />
+      <strong>PostgreSQL</strong><br />
+      <sub>database</sub>
+    </td>
+    <td align="center" width="120">
+      <img src="./SVG/docker.svg" width="44" height="44" alt="Docker" /><br />
+      <strong>Docker</strong><br />
+      <sub>containers</sub>
+    </td>
+    <td align="center" width="120">
+      <img src="./SVG/linux.svg" width="44" height="44" alt="Linux" /><br />
+      <strong>Linux</strong><br />
+      <sub>servers</sub>
+    </td>
+  </tr>
+</table>
 
-### Backend
+## Growing Stack
 
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+<table>
+  <tr>
+    <td align="center" width="120">
+      <img src="./SVG/react.svg" width="44" height="44" alt="React" /><br />
+      <strong>React.js</strong><br />
+      <sub>learning</sub>
+    </td>
+    <td align="center" width="120">
+      <img src="./SVG/nextdotjs.svg" width="44" height="44" alt="Next.js" /><br />
+      <strong>Next.js</strong><br />
+      <sub>next up</sub>
+    </td>
+    <td align="center" width="120">
+      <img src="./SVG/nodedotjs.svg" width="44" height="44" alt="Node.js" /><br />
+      <strong>Node.js</strong><br />
+      <sub>runtime</sub>
+    </td>
+    <td align="center" width="120">
+      <img src="./SVG/mongodb.svg" width="44" height="44" alt="MongoDB" /><br />
+      <strong>MongoDB</strong><br />
+      <sub>NoSQL</sub>
+    </td>
+    <td align="center" width="120">
+      <img src="./SVG/figma.svg" width="44" height="44" alt="Figma" /><br />
+      <strong>Figma</strong><br />
+      <sub>UI planning</sub>
+    </td>
+  </tr>
+</table>
 
-### Databases
+## Deployment & Workflow
 
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
-
-### DevOps & Systems
-
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-
-### Frontend
-
-![React](https://img.shields.io/badge/React.js-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-
-</div>
+<table>
+  <tr>
+    <td align="center" width="120">
+      <img src="./SVG/github.svg" width="44" height="44" alt="GitHub" /><br />
+      <strong>GitHub</strong><br />
+      <sub>version control</sub>
+    </td>
+    <td align="center" width="120">
+      <img src="./SVG/github-actions.svg" width="44" height="44" alt="GitHub Actions" /><br />
+      <strong>Actions</strong><br />
+      <sub>automation</sub>
+    </td>
+    <td align="center" width="120">
+      <img src="./SVG/digitalocean.svg" width="44" height="44" alt="DigitalOcean" /><br />
+      <strong>DigitalOcean</strong><br />
+      <sub>cloud</sub>
+    </td>
+    <td align="center" width="120">
+      <img src="./SVG/aws.svg" width="44" height="44" alt="AWS" /><br />
+      <strong>AWS</strong><br />
+      <sub>cloud</sub>
+    </td>
+    <td align="center" width="120">
+      <img src="./SVG/googlecloud.svg" width="44" height="44" alt="Google Cloud" /><br />
+      <strong>GCP</strong><br />
+      <sub>cloud</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ## Skill Proficiency
 
-```text
-Laravel / PHP              ##################--  92%
-MySQL / PostgreSQL         #################---  85%
-Docker / Linux / Server    ###############-----  78%
-JavaScript / HTML / CSS    ##############------  70%
-React.js                   ########------------  40%
-```
+<table>
+  <tr>
+    <td><strong>Laravel / PHP</strong></td>
+    <td><code>##################--</code></td>
+    <td align="right"><strong>92%</strong></td>
+  </tr>
+  <tr>
+    <td><strong>MySQL / PostgreSQL</strong></td>
+    <td><code>#################---</code></td>
+    <td align="right"><strong>85%</strong></td>
+  </tr>
+  <tr>
+    <td><strong>Docker / Linux / Server</strong></td>
+    <td><code>###############-----</code></td>
+    <td align="right"><strong>78%</strong></td>
+  </tr>
+  <tr>
+    <td><strong>JavaScript / HTML / CSS</strong></td>
+    <td><code>##############------</code></td>
+    <td align="right"><strong>70%</strong></td>
+  </tr>
+  <tr>
+    <td><strong>React.js</strong></td>
+    <td><code>########------------</code></td>
+    <td align="right"><strong>40%</strong></td>
+  </tr>
+</table>
 
 ---
 
@@ -91,6 +189,33 @@ React.js                   ########------------  40%
 <img src="https://github-profile-trophy.vercel.app/?username=jayead1999&theme=tokyonight&no-frame=true&row=1" alt="GitHub trophies" />
 
 </div>
+
+---
+
+## Build Direction
+
+<table>
+  <tr>
+    <td width="50%">
+      <strong>Backend engineering</strong><br />
+      <sub>REST APIs, authentication, database optimization, queues, caching, service structure.</sub>
+    </td>
+    <td width="50%">
+      <strong>Server &amp; deployment</strong><br />
+      <sub>Linux, Docker, CI/CD, cloud hosting, production readiness, monitoring habits.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <strong>Full-stack growth</strong><br />
+      <sub>React, Next.js, UI architecture, reusable components, modern frontend workflows.</sub>
+    </td>
+    <td width="50%">
+      <strong>Product mindset</strong><br />
+      <sub>Clean user flows, maintainable code, practical tools, fast iteration.</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -137,8 +262,15 @@ React.js                   ########------------  40%
 <div align="center">
 
 <a href="https://github.com/jayead1999">
-  <img src="https://img.shields.io/badge/GitHub-jayead1999-181717?style=for-the-badge&logo=github" alt="GitHub profile" />
+  <img src="./SVG/github-wordmark.svg" width="120" alt="GitHub" />
 </a>
+
+<br />
+<br />
+
+![Always Learning](https://img.shields.io/badge/always-learning-388bfd?style=flat-square)
+![Always Shipping](https://img.shields.io/badge/always-shipping-1d9e75?style=flat-square)
+![Bangladesh](https://img.shields.io/badge/Bangladesh-BD-f59e0b?style=flat-square)
 
 <br />
 <br />
