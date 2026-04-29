@@ -1,41 +1,142 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
-    <!-- Background with pattern -->
-    <defs>
-        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2d3748" stroke-width="1"/>
-        </pattern>
-        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
-        </linearGradient>
-    </defs>
-    
-    <!-- Main background -->
-    <rect width="1200" height="300" fill="url(#grad2)"/>
-    <!-- Pattern overlay -->
-    <rect width="1200" height="300" fill="url(#grid)" opacity="0.3"/>
-    
-    <!-- Decorative shapes -->
-    <circle cx="100" cy="150" r="60" fill="#3b82f6" opacity="0.1"/>
-    <circle cx="1100" cy="150" r="80" fill="#3b82f6" opacity="0.1"/>
-    
-    <!-- Left bracket -->
-    <text x="100" y="150" font-family="monospace" font-size="120" fill="#3b82f6" opacity="0.3">{</text>
-    <!-- Right bracket -->
-    <text x="1100" y="150" font-family="monospace" font-size="120" fill="#3b82f6" opacity="0.3">}</text>
-    
-    <!-- Main heading with modern tech feel -->
-    <text x="600" y="140" font-family="Arial" font-size="44" fill="white" text-anchor="middle" font-weight="bold">
-        Md.Towfique Hasan Jayead
-    </text>
-    
-    <!-- Subtitle with code-like elements -->
-    <text x="600" y="190" font-family="monospace" font-size="24" fill="#60a5fa" text-anchor="middle">
-        &lt;Fullstack Developer /&gt;
-    </text>
-    
-    <!-- Tech-inspired decorative elements -->
-    <rect x="250" y="220" width="700" height="4" fill="#3b82f6" opacity="0.3"/>
-    <circle cx="250" cy="222" r="4" fill="#60a5fa"/>
-    <circle cx="950" cy="222" r="4" fill="#60a5fa"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Towfique Hasan Jayead animated GitHub profile banner</title>
+  <desc id="desc">Animated dark developer banner for a Laravel backend engineer.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060c1a"/>
+      <stop offset="48%" stop-color="#0d1b3e"/>
+      <stop offset="100%" stop-color="#062a2a"/>
+    </linearGradient>
+
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#388bfd"/>
+      <stop offset="55%" stop-color="#1d9e75"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#388bfd" stroke-width="1" opacity=".16"/>
+    </pattern>
+
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+      .sans { font-family: Inter, Segoe UI, Arial, sans-serif; }
+      .name { font-size: 58px; font-weight: 800; fill: #ffffff; letter-spacing: .5px; }
+      .sub { font-size: 23px; fill: #9fb5d7; }
+      .code { font-size: 20px; fill: #63e6be; }
+      .muted { fill: #5a7096; font-size: 16px; }
+      .badgeText { font-size: 17px; font-weight: 700; fill: #dbeafe; }
+      .spark { animation: twinkle 2.8s ease-in-out infinite; transform-origin: center; }
+      .float1 { animation: floatA 5.5s ease-in-out infinite; }
+      .float2 { animation: floatB 7s ease-in-out infinite; }
+      .scan { animation: scan 4.8s linear infinite; }
+      .cursor { animation: blink 1s steps(2, start) infinite; }
+      .bar1 { animation: grow1 3s ease-out infinite alternate; }
+      .bar2 { animation: grow2 3.2s ease-out infinite alternate; }
+      .bar3 { animation: grow3 3.4s ease-out infinite alternate; }
+      .bar4 { animation: grow4 3.6s ease-out infinite alternate; }
+
+      @keyframes twinkle {
+        0%, 100% { opacity: .25; transform: scale(.8); }
+        50% { opacity: 1; transform: scale(1.18); }
+      }
+      @keyframes floatA {
+        0%, 100% { transform: translateY(0); opacity: .72; }
+        50% { transform: translateY(-18px); opacity: 1; }
+      }
+      @keyframes floatB {
+        0%, 100% { transform: translateY(0) translateX(0); opacity: .55; }
+        50% { transform: translateY(15px) translateX(-10px); opacity: .9; }
+      }
+      @keyframes scan {
+        0% { transform: translateX(-260px); opacity: 0; }
+        20% { opacity: .65; }
+        70% { opacity: .65; }
+        100% { transform: translateX(1250px); opacity: 0; }
+      }
+      @keyframes blink {
+        0%, 45% { opacity: 1; }
+        46%, 100% { opacity: 0; }
+      }
+      @keyframes grow1 { from { width: 160px; } to { width: 272px; } }
+      @keyframes grow2 { from { width: 140px; } to { width: 244px; } }
+      @keyframes grow3 { from { width: 110px; } to { width: 225px; } }
+      @keyframes grow4 { from { width: 80px; } to { width: 150px; } }
+    </style>
+  </defs>
+
+  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="360" rx="28" fill="url(#grid)"/>
+
+  <circle class="float1" cx="1025" cy="76" r="86" fill="#388bfd" opacity=".14"/>
+  <circle class="float2" cx="106" cy="282" r="74" fill="#1d9e75" opacity=".13"/>
+  <circle class="float1" cx="1005" cy="290" r="44" fill="#f59e0b" opacity=".1"/>
+
+  <rect class="scan" x="0" y="0" width="170" height="360" fill="#ffffff" opacity=".16"/>
+
+  <g opacity=".85">
+    <circle class="spark" cx="88" cy="76" r="3" fill="#8ecbff"/>
+    <circle class="spark" cx="181" cy="112" r="2.5" fill="#63e6be" style="animation-delay:.45s"/>
+    <circle class="spark" cx="978" cy="172" r="3.5" fill="#8ecbff" style="animation-delay:.9s"/>
+    <circle class="spark" cx="1106" cy="233" r="2.5" fill="#fbbf24" style="animation-delay:1.35s"/>
+    <circle class="spark" cx="866" cy="58" r="2.5" fill="#63e6be" style="animation-delay:1.8s"/>
+  </g>
+
+  <g transform="translate(74 76)">
+    <text class="mono code" x="0" y="0">&gt; ./hello_world.sh<tspan class="cursor">_</tspan></text>
+    <text class="sans name" x="0" y="70">Towfique Hasan Jayead</text>
+    <text class="sans sub" x="2" y="112">Laravel Developer | Backend Engineer | Bangladesh</text>
+
+    <g transform="translate(0 148)">
+      <rect x="0" y="0" width="196" height="38" rx="19" fill="#1d9e75" opacity=".16" stroke="#1d9e75" stroke-opacity=".48"/>
+      <circle cx="21" cy="19" r="5" fill="#1d9e75" filter="url(#softGlow)">
+        <animate attributeName="opacity" values="1;.25;1" dur="1.4s" repeatCount="indefinite"/>
+      </circle>
+      <text class="sans badgeText" x="37" y="25">Open to opportunities</text>
+    </g>
+
+    <g transform="translate(232 148)">
+      <rect x="0" y="0" width="120" height="38" rx="19" fill="#388bfd" opacity=".15" stroke="#388bfd" stroke-opacity=".45"/>
+      <text class="sans badgeText" x="20" y="25">3+ years</text>
+    </g>
+
+    <g transform="translate(370 148)">
+      <rect x="0" y="0" width="130" height="38" rx="19" fill="#f59e0b" opacity=".14" stroke="#f59e0b" stroke-opacity=".4"/>
+      <text class="sans badgeText" x="20" y="25">12+ tools</text>
+    </g>
+  </g>
+
+  <g transform="translate(800 88)">
+    <rect x="0" y="0" width="300" height="194" rx="18" fill="#091426" stroke="#388bfd" stroke-opacity=".28"/>
+    <text class="mono muted" x="24" y="38">skill.proficiency()</text>
+
+    <text class="sans muted" x="24" y="76">Laravel / PHP</text>
+    <rect x="24" y="86" width="252" height="8" rx="4" fill="#17233a"/>
+    <rect class="bar1" x="24" y="86" height="8" rx="4" fill="#ef4444"/>
+
+    <text class="sans muted" x="24" y="114">MySQL / PostgreSQL</text>
+    <rect x="24" y="124" width="252" height="8" rx="4" fill="#17233a"/>
+    <rect class="bar2" x="24" y="124" height="8" rx="4" fill="#0ea5e9"/>
+
+    <text class="sans muted" x="24" y="152">Docker / Linux</text>
+    <rect x="24" y="162" width="252" height="8" rx="4" fill="#17233a"/>
+    <rect class="bar3" x="24" y="162" height="8" rx="4" fill="#1d9e75"/>
+
+    <text class="sans muted" x="24" y="190">React.js</text>
+    <rect x="104" y="182" width="172" height="8" rx="4" fill="#17233a"/>
+    <rect class="bar4" x="104" y="182" height="8" rx="4" fill="#22d3ee"/>
+  </g>
+
+  <path d="M70 322 H1130" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" opacity=".7">
+    <animate attributeName="stroke-dasharray" values="120 1020;420 720;120 1020" dur="5s" repeatCount="indefinite"/>
+  </path>
 </svg>
