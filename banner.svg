@@ -81,7 +81,6 @@
   <circle class="float2" cx="106" cy="282" r="74" fill="#1d9e75" opacity=".13"/>
   <circle class="float1" cx="1005" cy="290" r="44" fill="#f59e0b" opacity=".1"/>
 
-  <rect class="scan" x="0" y="0" width="170" height="360" fill="#ffffff" opacity=".16"/>
 
   <g opacity=".85">
     <circle class="spark" cx="88" cy="76" r="3" fill="#8ecbff"/>
